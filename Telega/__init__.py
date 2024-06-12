@@ -1,1 +1,1 @@
-from Telega import *
+pass
