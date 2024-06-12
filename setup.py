@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/ootokonohito/Telega",
     packages=setuptools.find_packages(),
-    license="GNU v3.0",
+    license="GPL v3.0",
     keywords="Telegram",
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -21,7 +21,7 @@ setuptools.setup(
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
-        "License :: OSI Approved :: GNU v3.0 License",
+        "License :: OSI Approved :: GPL v3.0 License",
         "Operating System :: OS Independent",
     ],
     python_requires=">=3",
