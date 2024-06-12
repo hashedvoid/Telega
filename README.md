@@ -7,7 +7,7 @@
 pip install git+https://github.com/ootokonohito/Telega
 ```
 # <p align="center">Writing the first bot
-```
+```python
 from Telega import Bot
 import time
 
