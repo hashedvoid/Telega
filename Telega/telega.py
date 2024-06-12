@@ -4,11 +4,11 @@ import json
 
 URL = 'https://api.telegram.org/bot'
 
-class ExistenseException(Exception):
+class ExistenceException(Exception):
 	pass
 
 class Bot:
-	class newExistense:
+	class newExistence:
 		def __init__(self, token):
 			global TOKEN
 			self.token = token
@@ -17,7 +17,7 @@ class Bot:
 			try:
 				self.result = requests.get(f'{URL}{self.token}/getMe').json()['result']
 			except KeyError:
-				raise ExistenseException('Invalid token entered.')
+				raise ExistenceException('Invalid token entered.')
 			return self.result
 		def getUpdates(self, offset=0):
 			self.result = requests.get(f'{URL}{self.token}/getUpdates?offset={offset}').json()
