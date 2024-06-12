@@ -41,3 +41,24 @@ if __name__ == '__main__':
                 update_id = message['update_id']
                 bot.sendMessage(message['message']['chat']['id'], message['message']['text'])
 ```
+# <p align="center" Keyboard usage
+```
+from Telega import Bot, Keyboard
+import time
+
+bot = Bot.newExistence('TOKEN')
+
+kb = Keyboard()
+kb.add_button({'test': 'test'})
+
+if __name__ == '__main__':
+    update_id = bot.getUpdates()[-1]['update_id']
+    while True:
+        time.sleep(2)
+        messages = bot.getUpdates(update_id)
+        for message in messages:
+            if update_id < message['update_id']:
+                update_id = message['update_id']
+                if message['message']['text'] == '/start':
+                	bot.sendMessage(message['message']['chat']['id'], f"Hello, world!", reply_markup=kb.compile())
+```
