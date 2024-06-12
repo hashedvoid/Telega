@@ -1,1 +1,1 @@
-from telega import *
+from Telega import *
