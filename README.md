@@ -11,7 +11,7 @@ pip install git+https://github.com/hashedvoid/Telega
 from Telega import Bot
 import time
 
-bot = Bot.newExistense('TOKEN')
+bot = Bot.newExistence('TOKEN')
 
 if __name__ == '__main__':
     update_id = bot.getUpdates()[-1]['update_id']
@@ -29,7 +29,7 @@ if __name__ == '__main__':
 from Telega import Bot
 import time
 
-bot = Bot.newExistense('TOKEN')
+bot = Bot.newExistence('TOKEN')
 
 if __name__ == '__main__':
     update_id = bot.getUpdates()[-1]['update_id']
