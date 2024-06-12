@@ -4,7 +4,7 @@
 
 # <p align="center">Installation
 ```
-pip install git+https://github.com/ootokonohito/Telega
+pip install git+https://github.com/hashedvoid/Telega
 ```
 # <p align="center">Writing the first bot
 ```python
