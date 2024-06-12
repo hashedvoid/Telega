@@ -4,11 +4,11 @@ import json
 
 URL = 'https://api.telegram.org/bot'
 
-class ExistenceException(Exception):
+class ExistenseException(Exception):
 	pass
 
 class Bot:
-	class newExistence:
+	class newExistense:
 		def __init__(self, token):
 			global TOKEN
 			self.token = token
@@ -17,17 +17,18 @@ class Bot:
 			try:
 				self.result = requests.get(f'{URL}{self.token}/getMe').json()['result']
 			except KeyError:
-				raise ExistenceException('Invalid token entered.')
+				raise ExistenseException('Invalid token entered.')
 			return self.result
 		def getUpdates(self, offset=0):
 			self.result = requests.get(f'{URL}{self.token}/getUpdates?offset={offset}').json()
 			return self.result['result']
 		class sendMessage:
-			def __init__(self, id, text, parsemode='Markdown'):
+			def __init__(self, id, text, parsemode='Markdown', replymarkup={}):
 				self.id = id
 				self.text = text
 				self.parsemode = parsemode
-				self.result = requests.get(f'{URL}{TOKEN}/sendMessage?chat_id={self.id}&parse_mode={self.parsemode}&text={self.text}').json()
+				self.replymarkup = replymarkup
+				self.result = requests.get(f'{URL}{TOKEN}/sendMessage?chat_id={self.id}&parse_mode={self.parsemode}&text={self.text}&reply_markup={self.replymarkup}').json()
 			def response(self):
 				return self.result
 		class sendPhoto:
@@ -126,3 +127,16 @@ class Bot:
 				self.uid = uid
 				self.permissions = permissions
 				self.result = requests.get(f'{URL}{TOKEN}/unbanChatMember?chat_id={self.cid}&user_id={self.uid}&permissions={self.permissions}').json()
+	class Keyboard:
+		def __init__(self, mode="keyboard", **args):
+			self.mode = mode
+			self.keyboard = {mode: [[]]}
+			self.keyboard.update(args)
+		def add_line(self, *args):
+			self.keyboard[self.mode].append(list(args))
+		def add_button(self, **args):
+			self.keyboard[self.mode][-1].append(args)
+		def clear(self):
+			self.keyboard[self.mode] = [[]]
+		def compile(self):
+			return json.dumps(self.keyboard)
