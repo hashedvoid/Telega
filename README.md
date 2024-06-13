@@ -49,7 +49,7 @@ import time
 bot = Bot.newExistence('TOKEN')
 
 kb = Keyboard()
-kb.add_button({'test': 'test'})
+kb.add_button(text="Wow, this is button!")
 
 if __name__ == '__main__':
     update_id = bot.getUpdates()[-1]['update_id']
