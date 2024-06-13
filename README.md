@@ -41,8 +41,8 @@ if __name__ == '__main__':
                 update_id = message['update_id']
                 bot.sendMessage(message['message']['chat']['id'], message['message']['text'])
 ```
-# <p align="center" Keyboard usage
-```
+# <p align="center">Keyboard usage
+```python
 from Telega import Bot, Keyboard
 import time
 
