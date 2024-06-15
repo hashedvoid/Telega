@@ -4,11 +4,11 @@ import json
 
 URL = 'https://api.telegram.org/bot'
 
-class ExistenseException(Exception):
+class ExistanceException(Exception):
 	pass
 
 class Bot:
-	class newExistense:
+	class newExistance:
 		def __init__(self, token):
 			global TOKEN
 			self.token = token
