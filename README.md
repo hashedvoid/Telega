@@ -11,7 +11,7 @@ pip install git+https://github.com/hashedvoid/Telega
 from Telega import Bot
 import time
 
-bot = Bot.newExistence('TOKEN')
+bot = Bot.newExistance('TOKEN')
 
 if __name__ == '__main__':
     update_id = bot.getUpdates()[-1]['update_id']
@@ -29,7 +29,7 @@ if __name__ == '__main__':
 from Telega import Bot
 import time
 
-bot = Bot.newExistence('TOKEN')
+bot = Bot.newExistance('TOKEN')
 
 if __name__ == '__main__':
     update_id = bot.getUpdates()[-1]['update_id']
@@ -46,7 +46,7 @@ if __name__ == '__main__':
 from Telega import Bot, Keyboard
 import time
 
-bot = Bot.newExistence('TOKEN')
+bot = Bot.newExistance('TOKEN')
 
 kb = Keyboard()
 kb.add_button(text="Wow, this is button!")
@@ -67,7 +67,7 @@ if __name__ == '__main__':
 from Telega import Bot
 import time
 
-bot = Bot.newExistence('TOKEN')
+bot = Bot.newExistance('TOKEN')
 
 if __name__ == '__main__':
     update_id = bot.getUpdates()[-1]['update_id']
@@ -78,6 +78,7 @@ if __name__ == '__main__':
             if update_id < message['update_id']:
                 update_id = message['update_id']
                 if message['message']['text'] == '/dice':
-                    bot.sendDice(message['message']['chat']['id'])
+                   dice =  bot.sendDice(message['message']['chat']['id'])
+                   print(dice.response()['dice']['value'])
 ```
 
